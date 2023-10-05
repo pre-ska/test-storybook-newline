@@ -16,6 +16,9 @@ const meta = {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  args: {
+    label: 'hello world',
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -25,26 +28,36 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'Button',
   },
 };
 
-export const Secondary: Story = {
-  args: {
-    label: 'Button',
-  },
-};
+export const Secondary: Story = {};
 
 export const Large: Story = {
   args: {
     size: 'large',
-    label: 'Button',
   },
 };
 
 export const Small: Story = {
   args: {
     size: 'small',
-    label: 'Button',
+  },
+};
+
+export const Red: Story = {
+  args: {
+    backgroundColor: 'red',
+    color: 'white',
+  },
+  argTypes: {
+    backgroundColor: {
+      control: 'inline-radio',
+      options: ['red', 'green', 'blue', 'pink'],
+    },
+    color: {
+      control: 'select',
+      options: ['white', 'black'],
+    },
   },
 };
